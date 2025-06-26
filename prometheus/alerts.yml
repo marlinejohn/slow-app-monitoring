@@ -2,7 +2,7 @@ groups:
   - name: slow-api-alerts
     rules:
       - alert: HighPendingRequests
-        expr: sum(myapp_pending_requests) > 500
+        expr: sum(myapp_pending_requests) >= 500
         for: 1m
         labels:
           severity: warning
