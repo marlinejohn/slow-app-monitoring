@@ -1,0 +1,15 @@
+global:
+  smtp_smarthost: "smtp.hostinger.com:465"
+  smtp_from: "monitoring@dionamite.com"
+  smtp_auth_username: "monitoring@dionamite.com"
+  smtp_auth_password: "Ironhack1!"
+  smtp_require_tls: true
+
+route:
+  receiver: "email-notifications"
+
+receivers:
+  - name: "email-notifications"
+    email_configs:
+      - to: "monitoring@dionamite.com"
+        send_resolved: true
