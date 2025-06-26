@@ -1,0 +1,18 @@
+groups:
+  - name: slow-api-alerts
+    rules:
+      - alert: HighPendingRequests
+        expr: sum(myapp_pending_requests) > 500
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High number of pending requests"
+
+      - alert: HighMemoryUsage
+        expr: process_resident_memory_bytes / container_spec_memory_limit_bytes > 0.5
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Container memory usage is over 50%"
