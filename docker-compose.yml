@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  slow-api:
+    build: ./app
+    container_name: slow-api
+    ports:
+      - "8080:8080"
+    mem_limit: 256m
+    restart: always
