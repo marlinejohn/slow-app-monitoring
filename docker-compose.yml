@@ -31,3 +31,8 @@ services:
       - "9093:9093"
     volumes:
       - ./alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
+
+  loadgen:
+    build:
+      context: ./loadgen
+    restart: always
